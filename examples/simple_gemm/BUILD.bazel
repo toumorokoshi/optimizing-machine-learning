@@ -1,11 +1,15 @@
+load("@rules_cuda//cuda:defs.bzl", "cuda_library")
 load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
 
 package(default_visibility = ["//visibility:public"])
 
-cc_library(
+cuda_library(
     name = "gemm",
-    srcs = ["gemm.cc"],
+    srcs = ["gemm.cu"],
     hdrs = ["gemm.h"],
+    deps = [
+        "@cutlass",
+    ],
 )
 
 cc_test(

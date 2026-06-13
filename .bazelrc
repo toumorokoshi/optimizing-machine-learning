@@ -6,3 +6,6 @@ test --test_output=errors
 
 # Use HTML and colorful outputs
 common --color=yes
+
+# Autoload rules_cc for legacy built-in cc rules compatibility in Bazel 9+
+common --incompatible_autoload_externally=+@rules_cc

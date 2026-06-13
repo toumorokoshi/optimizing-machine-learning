@@ -10,8 +10,8 @@ Short for trillions of operations per second. It is a standard unit of measureme
 
 However, a benchmark of a TOPs for a given accelerator does not always provide an apples to apples direct comparison across AI accelerators - there are multiple additional dimensions that should be considered in that benchmark including:
 
-- precision: what is the data type that the TOPs has been benchmarked with?
-- sparse or dense: for matrix multiplcation specifically, many companies use the latency of performing an NxM matrix multiplication on a sparse matrix, where many of the values may be zero.
+- precision: what is the data type that the TOPs has been benchmarked with? fp32, fp16, bf16, int8, etc.
+- sparse or dense: for matrix multiplcation specifically, many companies use the latency of performing an NxM matrix multiplication on a sparse matrix, where many of the values may be zero. Many machine learning models operate against dense matrices, so a sparse benchmark may not be a realistic throughput target as compared to a dense measurement.
 
 ## DRAM Memory Bandwidth
 
@@ -21,13 +21,7 @@ Transformers are often limited by memory bandwidth.
 
 For the purpose of this investigation, the comparable platforms often use one of:
 
-## TOPs
-
-Trillions of operations per second. The higher the number, the higher the theoretical number of operations that can be performed.
-
-In practice TOPs are not often reached on models, with DRAM memory bandwidth, register, and l2 cache sizes can play a larger role in improving throughput.
-
-## TOPs Precision
+## Precision
 
 The TOPs of a particular compute make an assumption about the data type of the number. This is relevant as larger data types can have increased precision and therefore lead to improved model performance. However, higher precision also comes with increased data bandwidth needs depending on if the model weights themselves are stored at a higher precision (which they often are), as well as whether data types are cast to a lower precision before being written / read from DRAM and L2 cache.
 

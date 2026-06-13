@@ -6,6 +6,8 @@ With respect to hardware configuration, the following values are the leading fac
 
 ## TOPs
 
+Short for trillions of operations per second. It is a standard unit of measurement of the speed at which an AI accelerator is able to perform operations.
+
 ## DRAM Memory Bandwidth
 
 DRAM memory bandwidth will inform the speed by which the model can pre-fill KV caches and perform operations that do not support L2 cache centric algorithms such as FlashAttention.

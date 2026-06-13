@@ -1,0 +1,9 @@
+[book]
+authors = ["Yusuke"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Optimizing Machine Learning Models"
+
+[preprocessor.links]
+# Enable support for mdbook inline links and files inclusion (e.g. {{#include ...}})

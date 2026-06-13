@@ -1,0 +1,43 @@
+load("@rules_shell//shell:sh_binary.bzl", "sh_binary")
+
+package(default_visibility = ["//visibility:public"])
+
+# Source files for mdBook compilation
+filegroup(
+    name = "book_sources",
+    srcs = [
+        "book.toml",
+    ] + glob(["src/**/*.md"]),
+)
+
+# Generic target to run any mdbook command (e.g. bazel run //:mdbook -- clean)
+sh_binary(
+    name = "mdbook",
+    srcs = ["//tools:mdbook_wrapper.sh"],
+    data = [
+        ":book_sources",
+        "@mdbook_bin//:bin",
+    ],
+)
+
+# Target to start the mdbook local development server (bazel run //:serve)
+sh_binary(
+    name = "serve",
+    srcs = ["//tools:serve.sh"],
+    data = [
+        "//tools:mdbook_wrapper.sh",
+        ":book_sources",
+        "@mdbook_bin//:bin",
+    ],
+)
+
+# Target to build the static site for mdbook (bazel run //:build)
+sh_binary(
+    name = "build",
+    srcs = ["//tools:build.sh"],
+    data = [
+        "//tools:mdbook_wrapper.sh",
+        ":book_sources",
+        "@mdbook_bin//:bin",
+    ],
+)

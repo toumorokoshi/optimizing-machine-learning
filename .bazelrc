@@ -1,0 +1,8 @@
+# Enforce modern C++ standards
+build --cxxopt=-std=c++17
+
+# Show verbose test output on failure
+test --test_output=errors
+
+# Use HTML and colorful outputs
+common --color=yes

@@ -11,7 +11,7 @@ Short for trillions of operations per second. It is a standard unit of measureme
 However, a benchmark of a TOPs for a given accelerator does not always provide an apples to apples direct comparison across AI accelerators - there are multiple additional dimensions that should be considered in that benchmark including:
 
 - precision: what is the data type that the TOPs has been benchmarked with?
-- throughput
+- sparse or dense: for matrix multiplcation specifically, many companies use the latency of performing an NxM matrix multiplication on a sparse matrix, where many of the values may be zero.
 
 ## DRAM Memory Bandwidth
 

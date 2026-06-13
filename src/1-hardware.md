@@ -6,7 +6,7 @@ With respect to hardware configuration, the following values are the leading fac
 
 ## TOPs
 
-Short for trillions of operations per second. It is a standard unit of measurement of the speed at which an AI accelerator is able to perform operations.
+Short for trillions of operations per second. It is a standard unit of measurement of the speed at which an AI accelerator is able to perform an individual arithmetic operation.
 
 ## DRAM Memory Bandwidth
 

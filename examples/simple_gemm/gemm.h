@@ -27,3 +27,18 @@ double benchmark_cutlass_kernel(
     const std::vector<float>& B,
     int M, int N, int K,
     int num_runs);
+
+// Performs matrix multiplication on GPU using FP8 CUTLASS GEMM: C = A * B
+std::vector<float> gemm_cutlass_fp8(
+    const std::vector<float>& A,
+    const std::vector<float>& B,
+    int M, int N, int K);
+
+// Benchmarks the pure FP8 CUTLASS GEMM kernel execution time (excluding host-device transfers and mallocs)
+// Returns the average execution time in seconds.
+double benchmark_cutlass_kernel_fp8(
+    const std::vector<float>& A,
+    const std::vector<float>& B,
+    int M, int N, int K,
+    int num_runs);
+
